@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+  --color-light: #fff;
+  --color-dark: #000;
+  --maket-width: 1600px;
+  --container-width: 1170px;
+  --point: 768px;
+  --coef: calc(1600 - 768);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: var(--maket-width);
+  margin: 0 auto;
+}
+
+body,
+button,
+h1 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hide {
+  display: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.upper-case {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* Header */
+
+header {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.37), rgba(0, 0, 0, 0.15)),
+    url("./img/header-bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  padding: 3vw 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 13.5vw;
+  font-size: calc(11px + (100vw - var(--point)) * (3 / var(--coef)));
+}
+
+.header-nav {
+  display: flex;
+  gap: 5em;
+}
+
+.header-nav img {
+  min-width: 15.5px;
+  min-height: 24px;
+  width: 1.9375vw;
+  height: 3vw;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+}
+
+.link {
+  color: var(--color-light);
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: yellow;
+}
+
+.header-title {
+  color: var(--color-light);
+  line-height: 1.5;
+}
+
+.header-title p {
+  font-size: calc(22px + (100vw - var(--point)) * (8 / var(--coef)));
+  letter-spacing: 0.1em;
+}
+
+.header-title h1 {
+  font-size: calc(65px + (100vw - var(--point)) * (35 / var(--coef)));
+  margin-bottom: 0.2em;
+}
+
+.booking-btn {
+  color: var(--color-light);
+  background-color: transparent;
+  font-size: calc(12px + (100vw - var(--point)) * (5 / var(--coef)));
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  padding: 1em 1.3em;
+  border: 1px solid var(--color-light);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.booking-btn:hover {
+  color: yellow;
+  border-color: yellow;
+}
+
+/* About */
+
+.about {
+  font-size: calc(14px + (100vw - var(--point)) * (2 / var(--coef)));
+  color: var(--color-dark);
+  padding: 7.185em 0;
+}
+
+.section-title {
+  font-size: calc(30px + (100vw - var(--point)) * (20 / var(--coef)));
+  line-height: 1.5;
+  margin-bottom: 1.16em;
+}
+
+.articles-container,
+.images-container,
+.images-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 2.25em;
+}
+
+.article {
+  margin-bottom: 4.25em;
+}
+
+.article-title {
+  font-size: calc(18px + (100vw - var(--point)) * (7 / var(--coef)));
+  line-height: 1.5;
+  margin-bottom: 0.8em;
+}
+
+.article-text {
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.images-container img {
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.footer-container {
+  font-size: calc(12px + (100vw - var(--point)) * (3 / (1600 - var(--coef))));
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3.67em;
+  margin-bottom: 5.33em;
+}
+
+.year {
+  font-size: calc(11px + (100vw - var(--point)) * (3 / var(--coef)));
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    position: relative;
+  }
+
+  .tel {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+  }
+
+  .about {
+    padding: 5vw 0;
+  }
+
+  .articles-container {
+    display: block;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+  .article {
+    margin-bottom: 3vw;
+  }
+
+  .images-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .footer-container {
+    justify-content: space-around;
+  }
+}
